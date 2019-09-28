@@ -17,22 +17,26 @@ public class ColorAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getCount()
+    {
+        return colors.length;
+    }
+
+    @Override
+    public Object getItem(int i)
+    {
+        return colors[i];
+    }
+
+    @Override
+    public long getItemId(int i)
+    {
         return 0;
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(int i, View view, ViewGroup viewGroup)
+    {
         return null;
     }
 }
