@@ -3,6 +3,8 @@ package edu.temple.colorlab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Spinner;
 
 public class ColorActivity extends AppCompatActivity {
@@ -16,7 +18,7 @@ public class ColorActivity extends AppCompatActivity {
         Spinner spinner = findViewById(R.id.ListofColors);
 
         String colors[] = {"Green", "Red", "Blue", "Yellow", "Cyan", "Magenta", "Black", "Gray",
-                "Light Gray", "Dark Gray"};
+                "LightGray", "DarkGray"};
 
         ColorAdapter adapter = new ColorAdapter(ColorActivity.this, colors);
 

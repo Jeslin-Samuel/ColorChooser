@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
     String colors[];
@@ -37,6 +38,12 @@ public class ColorAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup)
     {
-        return null;
+        TextView textView = new TextView(context);
+        final String colorValue = colors[i];
+
+        textView.setText(colorValue);
+        textView.setBackgroundColor(Color.parseColor(colorValue));
+
+        return textView;
     }
 }
