@@ -21,7 +21,7 @@ public class ColorActivity extends AppCompatActivity {
         Spinner spinner = findViewById(R.id.ListofColors);
         final ConstraintLayout layout = findViewById(R.id.myLayout);
 
-        final String colors[] = {"Green", "Red", "Blue", "Yellow", "Cyan", "Magenta", "Black", "Gray",
+        final String colors[] = {"Select A Color", "Green", "Red", "Blue", "Yellow", "Cyan", "Magenta", "Black", "Gray",
                 "LightGray", "DarkGray"};
 
         ColorAdapter adapter = new ColorAdapter(ColorActivity.this, colors);
@@ -32,8 +32,13 @@ public class ColorActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
             {
-                view.setBackgroundColor(Color.WHITE);
-                layout.setBackgroundColor(Color.parseColor(colors[i]));
+                if (i > 0)
+                {
+                    view.setBackgroundColor(Color.WHITE);
+                    layout.setBackgroundColor(Color.parseColor(colors[i]));
+                }
+                else
+                    layout.setBackgroundColor(Color.WHITE);
             }
 
             @Override

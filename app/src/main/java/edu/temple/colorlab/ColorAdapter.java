@@ -48,7 +48,10 @@ public class ColorAdapter extends BaseAdapter {
         final String colorValue = colors[i];
 
         textView.setText(colorValue);
-        textView.setBackgroundColor(Color.parseColor(colorValue));
+        if (i > 0)
+            textView.setBackgroundColor(Color.parseColor(colorValue));
+        else
+            textView.setBackgroundColor(Color.WHITE);
 
         return textView;
     }
