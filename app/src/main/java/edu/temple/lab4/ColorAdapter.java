@@ -1,4 +1,4 @@
-package edu.temple.colorlab;
+package edu.temple.lab4;
 
 import android.content.Context;
 import android.graphics.Color;

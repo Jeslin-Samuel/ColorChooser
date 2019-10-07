@@ -1,16 +1,15 @@
-package edu.temple.colorlab;
+package edu.temple.lab4;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
-public class ColorActivity extends AppCompatActivity {
+public class PaletteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,7 +23,7 @@ public class ColorActivity extends AppCompatActivity {
         final String colors[] = {"Select A Color", "Green", "Red", "Blue", "Yellow", "Cyan", "Magenta", "Black", "Gray",
                 "LightGray", "DarkGray"};
 
-        ColorAdapter adapter = new ColorAdapter(ColorActivity.this, colors);
+        ColorAdapter adapter = new ColorAdapter(PaletteActivity.this, colors);
 
         spinner.setAdapter(adapter);
 
