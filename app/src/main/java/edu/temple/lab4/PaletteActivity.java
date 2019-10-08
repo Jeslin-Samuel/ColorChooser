@@ -3,6 +3,7 @@ package edu.temple.lab4;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ public class PaletteActivity extends AppCompatActivity {
 
         Spinner spinner = findViewById(R.id.ListofColors);
         final ConstraintLayout layout = findViewById(R.id.myLayout);
+        final ConstraintLayout canvasLayout = findViewById(R.id.CanvasLayout);
 
         final String colors[] = {"Select A Color", "Green", "Red", "Blue", "Yellow", "Cyan", "Magenta", "Black", "Gray",
                 "LightGray", "DarkGray"};
@@ -33,17 +35,16 @@ public class PaletteActivity extends AppCompatActivity {
             {
                 if (i > 0)
                 {
-                    view.setBackgroundColor(Color.WHITE);
-                    layout.setBackgroundColor(Color.parseColor(colors[i]));
+                    Intent launchIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
+                    launchIntent.putExtra("color", colors[i]);
+                    startActivity(launchIntent);
                 }
                 else
                     layout.setBackgroundColor(Color.WHITE);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+            public void onNothingSelected(AdapterView<?> adapterView) {}
         });
     }
 }
