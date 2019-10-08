@@ -17,6 +17,7 @@ public class PaletteActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Palette Activity");
 
         Spinner spinner = findViewById(R.id.ListofColors);
         final ConstraintLayout layout = findViewById(R.id.myLayout);
