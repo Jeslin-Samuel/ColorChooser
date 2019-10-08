@@ -23,8 +23,7 @@ public class PaletteActivity extends AppCompatActivity {
         final ConstraintLayout layout = findViewById(R.id.myLayout);
         final ConstraintLayout canvasLayout = findViewById(R.id.CanvasLayout);
 
-        final String colors[] = {"Select A Color", "Green", "Red", "Blue", "Yellow", "Cyan", "Magenta", "Black", "Gray",
-                "LightGray", "DarkGray"};
+        final String colors[] = getResources().getStringArray(R.array.colors);
 
         ColorAdapter adapter = new ColorAdapter(PaletteActivity.this, colors);
 
