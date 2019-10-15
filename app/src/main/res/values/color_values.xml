@@ -10,7 +10,7 @@
         <item>Magenta</item>,
         <item>Black</item>,
         <item>Gray</item>,
-        <item>Light Gray</item>,
-        <item>Dark Gray</item>
+        <item>LightGray</item>,
+        <item>DarkGray</item>
     </string-array>
 </resources>
