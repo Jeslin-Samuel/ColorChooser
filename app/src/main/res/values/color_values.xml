@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_values">
+        <item>Select A Color</item> ,
+        <item>Green</item>,
+        <item>Red</item>,
+        <item>Blue</item>,
+        <item>Yellow</item>,
+        <item>Cyan</item>,
+        <item>Magenta</item>,
+        <item>Black</item>,
+        <item>Gray</item>,
+        <item>Light Gray</item>,
+        <item>Dark Gray</item>
+    </string-array>
+</resources>
