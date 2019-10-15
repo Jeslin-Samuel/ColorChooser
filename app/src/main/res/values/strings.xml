@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Lab4</string>
+    <string name="palette_label">Palette Activity</string>
+    <string name="canvas_label">Canvas Activity</string>
     <string-array name="colors">
         <item>Select A Color</item> ,
         <item>Green</item>,
@@ -10,7 +12,7 @@
         <item>Magenta</item>,
         <item>Black</item>,
         <item>Gray</item>,
-        <item>LightGray</item>,
-        <item>DarkGray</item>
+        <item>Light Gray</item>,
+        <item>Dark Gray</item>
     </string-array>
 </resources>

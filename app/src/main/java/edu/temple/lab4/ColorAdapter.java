@@ -1,6 +1,7 @@
 package edu.temple.lab4;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,25 +9,25 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
-    String colors[];
+    String colorNames[];
     Context context;
 
-    public ColorAdapter(Context context, String[] colors)
+    public ColorAdapter(Context context, String[] colorNames)
     {
         this.context = context;
-        this.colors = colors;
+        this.colorNames = colorNames;
     }
 
     @Override
     public int getCount()
     {
-        return colors.length;
+        return colorNames.length;
     }
 
     @Override
     public Object getItem(int i)
     {
-        return colors[i];
+        return colorNames[i];
     }
 
     @Override
@@ -45,11 +46,12 @@ public class ColorAdapter extends BaseAdapter {
         else
             textView = new TextView(context);
 
-        final String colorValue = colors[i];
+        final String colorName = colorNames[i];
 
-        textView.setText(colorValue);
+        textView.setText(colorName);
+
         if (i > 0)
-            textView.setBackgroundColor(Color.parseColor(colorValue));
+            textView.setBackgroundColor(Color.parseColor(colorName));
         else
             textView.setBackgroundColor(Color.WHITE);
 

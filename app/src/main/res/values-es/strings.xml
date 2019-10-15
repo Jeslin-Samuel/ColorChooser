@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lab4</string>
+    <string name="palette_label">Paleta Actividad</string>
+    <string name="canvas_label">Lona Actividad</string>
+    <string-array name="colors">
+        <item>Selecciona un color</item> ,
+        <item>Verde</item>,
+        <item>Roja</item>,
+        <item>Azul</item>,
+        <item>Amarilla</item>,
+        <item>Cian</item>,
+        <item>Magenta</item>,
+        <item>Negra</item>,
+        <item>Gris</item>,
+        <item>Gris Claro</item>,
+        <item>Gris Oscuro</item>
+    </string-array>
+</resources>
