@@ -18,7 +18,6 @@ public class PaletteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        // Test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle(getResources().getString(R.string.palette_label));
@@ -26,9 +25,8 @@ public class PaletteActivity extends AppCompatActivity {
         Spinner spinner = findViewById(R.id.ListofColors);
         final ConstraintLayout layout = findViewById(R.id.myLayout);
         final String colorNames[] = getResources().getStringArray(R.array.colors);
-        final String colorValues[] = getResources().getStringArray(R.array.color_values);
 
-        ColorAdapter adapter = new ColorAdapter(PaletteActivity.this, colorNames, colorValues);
+        ColorAdapter adapter = new ColorAdapter(PaletteActivity.this, colorNames);
 
         spinner.setAdapter(adapter);
 
@@ -40,7 +38,7 @@ public class PaletteActivity extends AppCompatActivity {
                 if (i > 0)
                 {
                     Intent launchIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
-                    launchIntent.putExtra("color", colorValues[i]);
+                    launchIntent.putExtra("color", colorNames[i]);
                     startActivity(launchIntent);
                 }
                 else

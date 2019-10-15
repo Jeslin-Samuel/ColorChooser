@@ -10,14 +10,12 @@ import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
     String colorNames[];
-    String colorValues[];
     Context context;
 
-    public ColorAdapter(Context context, String[] colorNames, String[] colorValues)
+    public ColorAdapter(Context context, String[] colorNames)
     {
         this.context = context;
         this.colorNames = colorNames;
-        this.colorValues = colorValues;
     }
 
     @Override
@@ -49,12 +47,11 @@ public class ColorAdapter extends BaseAdapter {
             textView = new TextView(context);
 
         final String colorName = colorNames[i];
-        final String colorValue = colorValues[i];
 
         textView.setText(colorName);
 
         if (i > 0)
-            textView.setBackgroundColor(Color.parseColor(colorValue));
+            textView.setBackgroundColor(Color.parseColor(colorName));
         else
             textView.setBackgroundColor(Color.WHITE);
 
