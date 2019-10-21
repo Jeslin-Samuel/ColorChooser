@@ -18,7 +18,6 @@ public class PaletteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        // Test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle(getResources().getString(R.string.palette_label));
