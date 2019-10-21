@@ -1,4 +1,4 @@
-package edu.temple.lab4;
+package edu.temple.colorchooser;
 
 import android.content.Context;
 

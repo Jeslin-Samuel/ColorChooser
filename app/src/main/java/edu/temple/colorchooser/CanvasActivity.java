@@ -1,4 +1,4 @@
-package edu.temple.lab4;
+package edu.temple.colorchooser;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
