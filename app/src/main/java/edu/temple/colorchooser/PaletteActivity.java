@@ -26,14 +26,17 @@ public class PaletteActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         setTitle(getResources().getString(R.string.palette_label));
 
-        /* Fragment section begin */
-
-        /* Fragment section end */
-
         Spinner spinner = findViewById(R.id.ListofColors);
         final ConstraintLayout layout = findViewById(R.id.myLayout);
         final String colorNames[] = getResources().getStringArray(R.array.colors);
         final String colorValues[] = getResources().getStringArray(R.array.color_values);
+
+        /* Fragment section begin */
+
+        PaletteFragment paletteFragment = PaletteFragment.newInstance(colorValues);
+        getSupportFragmentManager().beginTransaction().replace(R.id.myLayout, paletteFragment).commit();
+
+        /* Fragment section end*/
 
         ColorAdapter adapter = new ColorAdapter(PaletteActivity.this, colorNames, colorValues);
 
