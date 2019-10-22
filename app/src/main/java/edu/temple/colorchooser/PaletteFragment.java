@@ -58,7 +58,7 @@ public class PaletteFragment extends Fragment
             {
                 if (i > 0)
                 {
-
+                    ((FragmentCommunicator) getActivity()).sendColor(values[i]);
                 }
                 else
                     layout.setBackgroundColor(Color.WHITE);
@@ -69,5 +69,10 @@ public class PaletteFragment extends Fragment
         });
 
         return view;
+    }
+
+    public interface FragmentCommunicator
+    {
+        public void sendColor(String color);
     }
 }

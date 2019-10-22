@@ -17,7 +17,7 @@ import android.widget.Spinner;
 
 import java.util.Locale;
 
-public class PaletteActivity extends AppCompatActivity{
+public class PaletteActivity extends AppCompatActivity implements PaletteFragment.FragmentCommunicator{
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -60,5 +60,12 @@ public class PaletteActivity extends AppCompatActivity{
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {}
         });
+    }
+
+    @Override
+    public void sendColor(String color)
+    {
+        CanvasFragment canvasFragment = CanvasFragment.newInstance(color);
+        getSupportFragmentManager().beginTransaction().replace(R.id.myLayout, canvasFragment).addToBackStack(null).commit();
     }
 }
