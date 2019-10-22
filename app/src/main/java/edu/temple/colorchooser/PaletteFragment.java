@@ -18,6 +18,7 @@ public class PaletteFragment extends Fragment
         PaletteFragment paletteFragment = new PaletteFragment();
         Bundle args = new Bundle();
         args.putStringArray(ARG_COLORS, colors);
+        paletteFragment.setArguments(args);
         return paletteFragment;
     }
 
