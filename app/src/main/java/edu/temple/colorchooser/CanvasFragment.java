@@ -11,6 +11,18 @@ import androidx.fragment.app.Fragment;
 
 public class CanvasFragment extends Fragment
 {
+    public static final String ARG_COLOR = "argColor";
+
+    public static CanvasFragment newInstance(String color)
+    {
+        CanvasFragment canvasFragment = new CanvasFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_COLOR, color);
+        canvasFragment.setArguments(args);
+        return canvasFragment;
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
