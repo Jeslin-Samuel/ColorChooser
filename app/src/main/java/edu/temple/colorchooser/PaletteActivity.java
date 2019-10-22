@@ -33,7 +33,7 @@ public class PaletteActivity extends AppCompatActivity{
 
         /* Fragment section begin */
 
-        PaletteFragment paletteFragment = PaletteFragment.newInstance(colorValues);
+        PaletteFragment paletteFragment = PaletteFragment.newInstance(colorNames, colorValues);
         getSupportFragmentManager().beginTransaction().replace(R.id.myLayout, paletteFragment).commit();
 
         /* Fragment section end*/
