@@ -2,10 +2,14 @@ package edu.temple.colorchooser;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +17,7 @@ import android.widget.Spinner;
 
 import java.util.Locale;
 
-public class PaletteActivity extends AppCompatActivity {
+public class PaletteActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,6 +25,10 @@ public class PaletteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle(getResources().getString(R.string.palette_label));
+
+        /* Fragment section begin */
+
+        /* Fragment section end */
 
         Spinner spinner = findViewById(R.id.ListofColors);
         final ConstraintLayout layout = findViewById(R.id.myLayout);
