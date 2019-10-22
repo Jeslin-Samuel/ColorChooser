@@ -11,6 +11,16 @@ import androidx.fragment.app.Fragment;
 
 public class PaletteFragment extends Fragment
 {
+    public static final String ARG_COLORS = "argColors";
+
+    public static PaletteFragment newInstance(String[] colors)
+    {
+        PaletteFragment paletteFragment = new PaletteFragment();
+        Bundle args = new Bundle();
+        args.putStringArray(ARG_COLORS, colors);
+        return paletteFragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

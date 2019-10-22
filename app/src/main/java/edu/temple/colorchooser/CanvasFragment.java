@@ -20,8 +20,8 @@ public class CanvasFragment extends Fragment
         args.putString(ARG_COLOR, color);
         canvasFragment.setArguments(args);
         return canvasFragment;
-
     }
+
 
     @Nullable
     @Override
