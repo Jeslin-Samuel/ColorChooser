@@ -26,46 +26,23 @@ public class PaletteActivity extends AppCompatActivity implements PaletteFragmen
         setContentView(R.layout.activity_main);
         setTitle(getResources().getString(R.string.palette_label));
 
-        Spinner spinner = findViewById(R.id.ListofColors);
-        final ConstraintLayout layout = findViewById(R.id.myLayout);
         final String colorNames[] = getResources().getStringArray(R.array.colors);
         final String colorValues[] = getResources().getStringArray(R.array.color_values);
 
         /* Fragment section begin */
 
-        PaletteFragment paletteFragment = PaletteFragment.newInstance(colorNames, colorValues);
+        PaletteFragment paletteFragment;
+
+        paletteFragment = PaletteFragment.newInstance(colorNames, colorValues);
         getSupportFragmentManager().beginTransaction().replace(R.id.myLayout, paletteFragment).commit();
 
         /* Fragment section end*/
-
-        ColorAdapter adapter = new ColorAdapter(PaletteActivity.this, colorNames, colorValues);
-
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
-            {
-                if (i > 0)
-                {
-                    Intent launchIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
-                    launchIntent.putExtra("color", colorValues[i]);
-                    startActivity(launchIntent);
-                }
-                else
-                    layout.setBackgroundColor(Color.WHITE);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {}
-        });
     }
 
     @Override
     public void sendColor(String color)
     {
         CanvasFragment canvasFragment = CanvasFragment.newInstance(color);
-        getSupportFragmentManager().beginTransaction().replace(R.id.myLayout, canvasFragment).addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.myLayout, canvasFragment).addToBackStack(null).commit();
     }
 }

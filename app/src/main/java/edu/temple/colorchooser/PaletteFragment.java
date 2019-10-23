@@ -23,6 +23,7 @@ public class PaletteFragment extends Fragment
 
     public String[] names;
     public String[] values;
+    public Context parent;
 
     public static PaletteFragment newInstance(String[] names, String[] values)
     {
@@ -32,6 +33,12 @@ public class PaletteFragment extends Fragment
         args.putStringArray(ARG_VALUES, values);
         paletteFragment.setArguments(args);
         return paletteFragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.parent = context;
     }
 
     @Nullable
@@ -47,7 +54,7 @@ public class PaletteFragment extends Fragment
             values = getArguments().getStringArray(ARG_VALUES);
         }
 
-        ColorAdapter adapter = new ColorAdapter(getActivity(), names, values);
+        ColorAdapter adapter = new ColorAdapter(parent, names, values);
 
         spinner.setAdapter(adapter);
 
@@ -58,7 +65,7 @@ public class PaletteFragment extends Fragment
             {
                 if (i > 0)
                 {
-                    ((FragmentCommunicator) getActivity()).sendColor(values[i]);
+                    ((FragmentCommunicator) parent).sendColor(values[i]);
                 }
                 else
                     layout.setBackgroundColor(Color.WHITE);
