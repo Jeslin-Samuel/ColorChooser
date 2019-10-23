@@ -1,21 +1,9 @@
 package edu.temple.colorchooser;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Spinner;
-
-import java.util.Locale;
 
 public class PaletteActivity extends AppCompatActivity implements PaletteFragment.FragmentCommunicator{
 
@@ -37,6 +25,17 @@ public class PaletteActivity extends AppCompatActivity implements PaletteFragmen
         getSupportFragmentManager().beginTransaction().replace(R.id.myLayout, paletteFragment).commit();
 
         /* Fragment section end*/
+    }
+
+    @Override
+    public void onAttachFragment(Fragment fragment) {
+        super.onAttachFragment(fragment);
+        if (fragment instanceof PaletteFragment) {
+            PaletteFragment paletteFragment = (PaletteFragment) fragment;
+            paletteFragment.setFragmentCommunicator(this);
+        }
+        else
+            throw new RuntimeException("Need to implement the FragmentCommunicator interface!");
     }
 
     @Override

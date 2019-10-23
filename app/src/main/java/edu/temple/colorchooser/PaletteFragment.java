@@ -1,7 +1,6 @@
 package edu.temple.colorchooser;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +22,7 @@ public class PaletteFragment extends Fragment
     public String[] names;
     public String[] values;
     public Context parent;
+    public FragmentCommunicator callback;
 
     public static PaletteFragment newInstance(String[] names, String[] values)
     {
@@ -36,7 +35,8 @@ public class PaletteFragment extends Fragment
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context)
+    {
         super.onAttach(context);
         this.parent = context;
     }
@@ -80,6 +80,11 @@ public class PaletteFragment extends Fragment
 
     public interface FragmentCommunicator
     {
-        public void sendColor(String color);
+        void sendColor(String color);
+    }
+
+    public void setFragmentCommunicator(FragmentCommunicator callback)
+    {
+        this.callback = callback;
     }
 }
